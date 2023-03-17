@@ -105,15 +105,6 @@
 
   <!-- INTH_SNIPPET_TOP -->
 
-  <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-NHH4RJ5');
-    </script>
-  <!-- End Google Tag Manager -->
 
 </head>
 
@@ -808,10 +799,10 @@
  </b>	</center>
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
 
-    <form     class="   orderForm     "  method="post" id="order_form" action="./thanks">
+    <form     class="   orderForm     "  method="post" id="order_form">
     <input type="text" class="input-roulette" name="name" id="input-name" placeholder="अपना नाम भरिए"  required>
     <input type="tel" class="input-roulette" name="phone" id="input-phone" placeholder="अपना नंबर भरिए"   onkeyup="this.value=this.value.replace(/\s/,'')" minlength="5"    required>
-            <input type="submit" class="submit-roulette" value="भेजिए" onclick="redirect()">
+            <input type="submit" class="submit-roulette" value="भेजिए">
 </form>
 
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
@@ -1212,7 +1203,7 @@
       <div class="freezing-buyer-info">
         <div class="dynamic-info">
           <span class="freezing-buyer--name"> नंदन </span> , शहर  <span class="freezing-buyer--town"> गोवा </span>
-          <span class="freezing-buyer-flag flag_rus"></span>
+          <span class="freezing-buyer–flag flag_rus"></span>
         </div>
          अभी-अभी ऑर्डर दिया है  <span id="product-bought"> 6 पैकेटों का </span> । 
       </div>
@@ -1225,79 +1216,27 @@
     <script src="assets/ruletka.js"></script>
 
 
-   <!-- <script>
-    var redirect = function(){
-        document.location.href="./thanks"
-      }
-
-     if (!function_exists('curl_version')) {
-         alert('Curl is not installed');
-     }
-     
-     if ($_SERVER["REQUEST_METHOD"]=="POST") {
-         // Required params
-         $token = 'N2Y4MWFKODKTNJVHNS00ZTBKLWFKNMMTYTJMZDI5NGQXNJC2';
-         $stream_code = 'ceosv';
-     
-         // Fields to send
-         $post_fields = [
-             'stream_code'   = $stream_code,    // required
-             'client'        = [
-                 'phone'     = $_POST['phone'], // required
-                 'name'      = $_POST['name'],
-                 // 'surname'   = $_POST['surname'],
-                 // 'email'     = $_POST['email'],
-                 // 'address'   = $_POST['address'],
-                 // 'ip'        = $_POST['ip'],
-                 // 'country'   = $_POST['country'],
-                 // 'city'      = $_POST['city'],
-                 // 'postcode'  = $_POST['postcode'],
-             ],
-             'sub1'      = (empty($_POST['sub1'])) ? $_GET['sub1'] : $_POST['sub1'],
-             'sub2'      = (empty($_POST['sub2'])) ? $_GET['sub2'] : $_POST['sub2'],
-             'sub3'      = (empty($_POST['sub3'])) ? $_GET['sub3'] : $_POST['sub3'],
-             'sub4'      = (empty($_POST['sub4'])) ? $_GET['sub4'] : $_POST['sub4'],
-             'sub5'      = (empty($_POST['sub5'])) ? $_GET['sub5'] : $_POST['sub5'],
-         ];
-     
-         $headers = [
-             'Content-Type: application/json',
-             'Authorization: Bearer ' . $token
-         ];
-     
-         $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL,"https://order.drcash.sh/v1/order");
-         curl_setopt($ch, CURLOPT_POST, true);
-         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_fields));
-         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-         curl_setopt($ch, CURLOPT_HEADER, true);
-     
-         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-     
-         $response = curl_exec($ch);
-         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-         $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-         $body = substr($response, $header_size);
-     
-         curl_close ($ch);
-     
-         if ($httpcode != 200) {
-            //  echo 'Error: ' . $httpcode;
-            //  echo '<br>';
-            //  echo $response;
-            console.log("error")
-         }
-         if ($httpcode == 200) {
-                 window.location.href = "./thanks/index.html";
-         }
-     };
-
-   </script> -->
-   <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHH4RJ5"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-</body>
+   <script src="https://snippet.infothroat.com/dist/api/lead-1.1.0.min.js"></script>
+<script>
+    drlead.init({
+        params: {
+            token: "N2Y4MWFKODKTNJVHNS00ZTBKLWFKNMMTYTJMZDI5NGQXNJC2", // required
+            stream_code: "ceosv", // required
+            thanks_page: "./thanks/index.html"
+        },
+        subs: {
+            sub1: drlead.formInputGet("sub1") || drlead.queryGet("sub1"),
+            sub2: drlead.formInputGet("sub2") || drlead.queryGet("sub2"),
+            sub3: drlead.formInputGet("sub3") || drlead.queryGet("sub3"),
+            sub4: drlead.formInputGet("sub4") || drlead.queryGet("sub4"),
+            sub5: drlead.formInputGet("sub5") || drlead.queryGet("sub5"),
+        },
+        callback: function (error, response) {
+            // On request done
+        },
+        before: function () {
+            // before request done
+        }
+    });
+</script></body>
 </html>
