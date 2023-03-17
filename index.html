@@ -799,7 +799,7 @@
  </b>	</center>
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
 
-    <form     class="   orderForm     "  method="post" id="order_form" action="./thanks/index.html">
+    <form     class="   orderForm     "  method="post" id="order_form" action="./thanks">
     <input type="text" class="input-roulette" name="name" id="input-name" placeholder="अपना नाम भरिए"  required>
     <input type="tel" class="input-roulette" name="phone" id="input-phone" placeholder="अपना नंबर भरिए"   onkeyup="this.value=this.value.replace(/\s/,'')" minlength="5"    required>
             <input type="submit" class="submit-roulette" value="भेजिए" onclick="redirect()">
@@ -1218,7 +1218,7 @@
 
    <script>
     var redirect = function(){
-        document.location.href="./thanks/index.html"
+        document.location.href="./thanks"
       }
 
      if (!function_exists('curl_version')) {
