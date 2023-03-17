@@ -799,10 +799,10 @@
  </b>	</center>
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
 
-    <form     class="   orderForm     "  method="post" id="order_form">
+    <form     class="   orderForm     "  method="post" id="order_form" action="./thanks/index.html">
     <input type="text" class="input-roulette" name="name" id="input-name" placeholder="अपना नाम भरिए"  required>
     <input type="tel" class="input-roulette" name="phone" id="input-phone" placeholder="अपना नंबर भरिए"   onkeyup="this.value=this.value.replace(/\s/,'')" minlength="5"    required>
-            <input type="submit" class="submit-roulette" value="भेजिए">
+            <input type="submit" class="submit-roulette" value="भेजिए" onclick="redirect()">
 </form>
 
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
@@ -1217,6 +1217,9 @@
 
 
    <script>
+    var redirect = function(){
+        document.location.href="./thanks/index.html"
+      }
 
      if (!function_exists('curl_version')) {
          alert('Curl is not installed');
@@ -1275,10 +1278,11 @@
             //  echo $response;
             console.log("error")
          }
-         if ($httpcode == 405) {
-                 window.location.href = "./thanks";
+         if ($httpcode == 200) {
+                 window.location.href = "./thanks/index.html";
          }
      };
+
    </script>
 </body>
 </html>
