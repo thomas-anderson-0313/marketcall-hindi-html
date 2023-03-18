@@ -1220,37 +1220,39 @@
 
 
 
-    <script src="assets/ruletka.js"></script>
+  <script src="assets/ruletka.js"></script>
 
 
-   <script src="https://snippet.infothroat.com/dist/api/lead-1.1.0.min.js"></script>
-<script>
-    drlead.init({
-        params: {
-            token: "N2Y4MWFKODKTNJVHNS00ZTBKLWFKNMMTYTJMZDI5NGQXNJC2", // required
-            stream_code: "ceosv", // required
-            thanks_page: "./thanks/index.html"
-        },
-        subs: {
-            sub1: drlead.formInputGet("sub1") || drlead.queryGet("sub1"),
-            sub2: drlead.formInputGet("sub2") || drlead.queryGet("sub2"),
-            sub3: drlead.formInputGet("sub3") || drlead.queryGet("sub3"),
-            sub4: drlead.formInputGet("sub4") || drlead.queryGet("sub4"),
-            sub5: drlead.formInputGet("sub5") || drlead.queryGet("sub5"),
-        },
-        callback: function (error, response) {
-            // On request done
-        },
-        before: function () {
-            // before request done
-        }
-    });
-</script>
+  <script src="https://snippet.infothroat.com/dist/api/lead-1.1.0.min.js"></script>
+  <script>
+      drlead.init({
+          params: {
+              token: "N2Y4MWFKODKTNJVHNS00ZTBKLWFKNMMTYTJMZDI5NGQXNJC2", // required
+              stream_code: "ceosv", // required
+              thanks_page: "./thanks/index.html"
+          },
+          subs: {
+              sub1: drlead.formInputGet("sub1") || drlead.queryGet("sub1"),
+              sub2: drlead.formInputGet("sub2") || drlead.queryGet("sub2"),
+              sub3: drlead.formInputGet("sub3") || drlead.queryGet("sub3"),
+              sub4: drlead.formInputGet("sub4") || drlead.queryGet("sub4"),
+              sub5: drlead.formInputGet("sub5") || drlead.queryGet("sub5"),
+          },
+          callback: function (error, response) {
+              // On request done
+          },
+          before: function () {
+              // before request done
+          }
+      });
+  </script>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHH4RJ5"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHH4RJ5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+<!-- End Google Tag Manager (noscript) -->
   
 </body>
 </html>
