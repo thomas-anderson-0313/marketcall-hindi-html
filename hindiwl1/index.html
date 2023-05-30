@@ -806,10 +806,10 @@
  </b>	</center>
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
 
-    <form     class="   orderForm     "  method="post" id="order_form">
+    <form     class="   orderForm     "  id="order_form">
     <input type="text" class="input-roulette" name="name" id="input-name" placeholder="अपना नाम भरिए"  required>
     <input type="tel" class="input-roulette" name="phone" id="input-phone" placeholder="अपना नंबर भरिए"   onkeyup="this.value=this.value.replace(/\s/,'')" minlength="5"    required>
-            <input type="submit" class="submit-roulette" value="भेजिए">
+            <input type="submit" id="submit" class="submit-roulette" value="भेजिए">
 </form>
 
     <!----------------------- ВСТАВИТЬ ФОРМУ --------------------------->
@@ -1256,4 +1256,27 @@
 <!-- End Google Tag Manager (noscript) -->
   
 </body>
+
+<script>
+	const form = document.querySelector("#order_form")
+	const submitButton = document.querySelector("#submit")
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbxyI51VjAH3Or6TymAL1-oz1GLXYg9m6TCyxwuA44pDXTQoXa1Jht9Aef1qgh5le2P5gQ/exec'
+ 
+		form.addEventListener('submit', e => {
+		  submitButton.disabled = true
+		  e.preventDefault()
+		  let requestBody = new FormData(form)
+		  fetch(scriptURL, { method: 'POST', body: requestBody})
+			.then(response => {
+			   alert('You have submitted successfully!', response)
+			   submitButton.disabled = false
+			  })
+			.catch(error => {
+			  submitButton.disabled = false
+	 
+			}
+			)
+		})
+ </script>
+
 </html>
